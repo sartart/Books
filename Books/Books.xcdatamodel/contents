@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Author" representedClassName="Author" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="author" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Book" representedClassName="Book">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="author" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="book" inverseEntity="Author" syncable="YES"/>
+        <relationship name="genre" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Genre" inverseName="book" inverseEntity="Genre" syncable="YES"/>
+        <relationship name="illustratorauthor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="IllustrationAuthor" inverseName="book" inverseEntity="IllustrationAuthor" syncable="YES"/>
+        <relationship name="publishing" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publishing" inverseName="book" inverseEntity="Publishing" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Genre" representedClassName="Genre" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="genre" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="IllustrationAuthor" representedClassName="IllustrationAuthor" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="book" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="illustratorauthor" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Publishing" representedClassName="Publishing" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="publishing" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Author" positionX="-3870" positionY="2655" width="128" height="73"/>
+        <element name="Book" positionX="-3591" positionY="2691" width="128" height="148"/>
+        <element name="Genre" positionX="-3861" positionY="2781" width="126" height="73"/>
+        <element name="IllustrationAuthor" positionX="-3402" positionY="2906" width="128" height="73"/>
+        <element name="Publishing" positionX="-3861" positionY="2898" width="128" height="73"/>
+    </elements>
+</model>
