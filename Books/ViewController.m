@@ -12,7 +12,7 @@
 #import "Genre.h"
 #import "IllustrationAuthor.h"
 #import "Publishing.h"
-#import "mycellCell.h"
+#import "mycellCell.h" ////sdvbigwiurvaweirubveurvbeirbvu
 
 @interface ViewController ()
 
